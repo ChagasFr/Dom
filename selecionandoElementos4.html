@@ -22,7 +22,11 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        function log() {
+            console.log(this)
+        }
+
+        HTMLAllCollection.prototype.log = log
     </script>
 </body>
 
