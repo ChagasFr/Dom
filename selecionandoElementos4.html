@@ -26,7 +26,23 @@
             console.log(this)
         }
 
-        HTMLAllCollection.prototype.log = log
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const list = document.querySelector('div ul')
+        list.parentNode.log()
+        list.childNodes.log()
+
+        const primeiro = list.firstChild
+        primeiro.log()
+        primeiro.nextSibling.log()
+
+        lista.children.log()
+        lista.firstElementChild.log()
+        lista.lastElementChild.log()
+        lista.parentNode.previousElementSibling.log()
     </script>
 </body>
 
