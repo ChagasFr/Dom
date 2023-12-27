@@ -27,6 +27,13 @@
         body.appendChild(div1)
         body.appendChild(div2)
         body.appendChild(div3)
+
+        const texto = document.createTextNode('Antes...')
+        div3.insertBefore(texto, div3.childNodes[0])
+
+        // clonando elemento
+        // false nao copia os filhos
+        const div4 = div3.cloneNode(true)
     </script>
 </body>
 
