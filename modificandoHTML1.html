@@ -18,6 +18,15 @@
         const div2 = document.createElement('div')
         div2.setAttribute('wm-atributo', 'valor')
         div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro'
+        const div3 = document.createElement('div')
+        div3.appendChild(p)
+
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
     </script>
 </body>
 
