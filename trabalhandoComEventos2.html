@@ -10,6 +10,17 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        // selecionando a div usando o querySelector
+        const item = document.querySelector('div')
+        item.style.position = 'absolute'
+
+        item.onmousemove = e => {
+            item.style.cursor = 'move'
+            // mudando o valor do click 
+            if (e.buttons) {
+                // mexendo com o posicionamento
+
+            }
+        }
     </script>
 </body>
