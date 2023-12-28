@@ -15,10 +15,14 @@
         item.style.position = 'absolute'
 
         item.onmousemove = e => {
+            const item = e.target
+
             item.style.cursor = 'move'
             // mudando o valor do click 
             if (e.buttons) {
                 // mexendo com o posicionamento
+                item.style.top = `${e.clientY- (item.clientHeight / 2)}px`
+                item.style.left = `${e.clientX- (item.clientWidth / 2)}px`
 
             }
         }
