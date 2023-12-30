@@ -16,3 +16,8 @@
   background-color: deepskyblue;
   overflow: hidden;
 }
+
+.passaro {
+  position: absolute;
+  width: 60px;
+}
