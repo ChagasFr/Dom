@@ -25,4 +25,7 @@ function ParDeBarreiras(altura, abertura, x) {
     // barreiras
     this.superior = new Barreira(true)
     this.inferior = new Barreira(false)
+
+    this.elemento.appendChild(this.superior.elemento)
+    this.elemento.appendChild(this.inferior.elemento)
 }
