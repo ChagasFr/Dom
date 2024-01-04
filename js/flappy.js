@@ -84,6 +84,23 @@ function Passaro(alturaJogo) {
 
     this.getY = () => parseInt(this.elemento.style.bottom.split('px')[0])
     this.setY = y => this.elemento.style.bottom = `${y}pc`
+
+    window.onkeydown = e => voando = true
+    window.onkeyup = e => voando = false
+
+    // descida/subida
+    this.animar = () => {
+        const novoY = this.getY() + (voando ? 8 : -5)
+        const alturaMaxima = alturaJogo - this.elemento.clientHeight
+
+        if (novoY <= 0) {
+            this.setY(0)
+        } else if (novoY >= alturaMaxima) {
+            
+        } else {
+            this.setY(novoY)
+        }
+    }
 }
 
 const barreiras = new Barreiras (700, 1200, 200, 400)
