@@ -61,6 +61,11 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
     this.animar = () => {
         this.pares.forEach(par => {
             par.setX(par.getX() - deslocamento)
+
+            // quando o elemento sair da area do jogo
+            if (par.getX() < -par.getLargura()) {
+                par.setX(par.getX() + espaco * this.pares.length)
+            }
         })
     }
 }
