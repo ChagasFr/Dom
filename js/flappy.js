@@ -137,4 +137,20 @@ function FlappyBird() {
     const barreiras = new Barreiras(altura, largura, 200, 400,
         // att pontos
         () => progresso.atualizarPontos(++pontos) )
+    const passaro = new Passaro(altura)
+
+    // apresentando
+    areaDoJogo.appendChild(progresso.elemento)
+    areaDoJogo.appendChild(passaro.elemento)
+    barreiras.pares.forEach(par => areaDoJogo.apprendChild(par.elemento))
+
+    this.start = () => {
+        //  loop do jogo
+        const temporizador = setInterval(() => {
+            barreiras.animar()
+            passaro.animar()
+        }, 20)
+
+    }
 }
+new FlappyBird().start()
