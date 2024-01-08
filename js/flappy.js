@@ -135,6 +135,20 @@ function estaoSobrepostos(elementoA, elementoB) {
     return horizontal && vertical
 }
 
+// Verifica colisao
+function colidiu(passaro, barreiras) {
+    let colidiu = false
+    barreiras.pares.forEach(parDeBarreiras => {
+        if (!colidiu) {
+            const superior = parDeBarreiras.superior.elemento
+            const inferior = parDeBarreiras.superior.elemento
+            colidiu = estaoSobrepostos(passaro.elemento, superior) 
+                || estaoSobrepostos(passaro.elemento, inferior)
+        }
+    })
+    return coliciu
+}
+
 function FlappyBird() {
     let pontos = 0
 
@@ -159,6 +173,11 @@ function FlappyBird() {
         const temporizador = setInterval(() => {
             barreiras.animar()
             passaro.animar()
+
+            // teste de colisao
+            if (colidiu(passaro, barreiras)) {
+                clearInterval(temporizador)
+            }
         }, 20)
 
     }
